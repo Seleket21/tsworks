@@ -1,0 +1,42 @@
+System: Linux kali 6.0.0-kali6-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.0.12-1kali1 (2022-12-19) x86_64 GNU/Linux
+
+Python version: 3.10
+
+Step1:
+
+Install the following modules using pip3/pip
+
+pip3 install mysql
+pip3 install yfinance
+pip3 install mysql-connector-python
+
+Step2:
+
+Upgrade numpy using pip3/pip
+
+pip3 install numpy --upgrade 
+
+Step3:
+
+Install XAMPP and start all services using following command.
+
+/opt/lampp/lampp start
+
+Then open a browser and open localhost/phpmyadmin and create a database with the name tsworks.
+After that import the tsworks.sql file into the database.
+
+Step4:
+
+Put the ticker name that is the acronym of the company from finance.yahoo.com in the tickers.txt file.
+
+Run data.py first using this command.
+python3 data.py
+
+Once the csv files are downloaded run sql.py to insert those data into the database.
+
+Step5:
+
+Run comp.py script to start the flask app.
+The flask app runs normally on 127.0.0.1:5000/
+
+Using the api documentation you can communicate with the API.

@@ -1,0 +1,33 @@
+Get all companies’ stock data for a particular day 
+Substitute the <date> with the required date in the format yyyy-mm-dd 
+and send a GET request to this URL
+
+<Host>/api/v1/stock/all/<date>
+
+Get all stock data for a particular company for a particular day
+Substitute the <company> with the company ticker 
+ex:- IBM, AAPL from home page of company on finance.yahoo.com 
+and the <date> and send a GET request to this URL
+
+<Host>/api/v1/stock/<company>/<date>
+
+Get all stock data for a particular company
+Substitute <company> with company ticker
+and send a GET request to this URL
+
+<Host>/api/v1/stock/<company>
+
+To update data send a POST/PATCH request to
+
+<Host>/api/v1/stock
+
+using a form with input elements with names as follows.
+
+Ticker, Date, Open, High, Low, Close, Adjclose, Volume
+
+
+Note: since you are only going to host the flask app 
+you need to also substitute the host appropriately 
+if you are hosting it locally then it will generally 
+be 127.0.0.1:5000 
+Example of an endpoint would be http://127.0.0.1:5000/api/v1/stock/all/2022-02-09
